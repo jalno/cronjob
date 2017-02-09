@@ -1,0 +1,20 @@
+{
+	"files":[
+		{
+			"classes":["task"],
+			"file":"libraries/tasks/task.php"
+		},
+		{
+			"classes":["task\\run"],
+			"file":"libraries/tasks/run.php"
+		},
+		{
+			"classes":["task\\schedule"],
+			"file":"libraries/tasks/schedule.php"
+		},
+		{
+			"classes":["processes\\cronjob"],
+			"file":"processes/cronjob.php"
+		}
+	]
+}
