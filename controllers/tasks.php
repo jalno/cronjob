@@ -374,8 +374,7 @@ class tasks extends controller{
 		if(http::is_post()){
 			$inputsRules = array(
 				'name' => array(
-					'type' => 'string',
-					'optional' => true
+					'type' => 'string'
 				),
 				'process' => array(
 					'empty' => true,
@@ -387,28 +386,24 @@ class tasks extends controller{
 				),
 				'status' => array(
 					'type' => 'number',
-					'optional' => true,
 					'values' => array(
 						task::active,
 						task::deactive
 					)
 				),
 				'minutes' => array(
-					'optional' => true
 				),
 				'hours' => array(
-					'optional' => true
 				),
 				'days' => array(
-					'optional' => true
 				),
 				'months' => array(
-					'optional' => true
 				)
 			);
 			try{
 				$inputs = $this->checkinputs($inputsRules);
 				$task = new task();
+				$task->status = $inputs['status'];
 				$found = false;
 				if(isset($inputs['name'])){
 					foreach($tasksEvents as $taskEvent){
@@ -433,9 +428,6 @@ class tasks extends controller{
 						}
 						if(isset($inputs['parameters'])){
 							$task->parameters = $this->validateParameters($inputs['parameters']);
-						}
-						if(isset($inputs['status'])){
-							$task->status = $inputs['status'];
 						}
 					}
 				}
