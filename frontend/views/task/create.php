@@ -29,7 +29,7 @@ class create extends tasks_create{
 		$this->handlingScheduleError();
 	}
 	private function setNavigation(){
-		navigation::active("settings/cronjob/create_task");
+		navigation::active("settings/cronjob");
 	}
 	public function addAssets() {
 		$this->addCSSFile(theme::url('assets/plugins/select2/dist/css/select2.min.css'));

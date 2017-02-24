@@ -26,6 +26,6 @@ class delete extends tasks_delete{
 		$this->setNavigation();
 	}
 	private function setNavigation(){
-		navigation::active("settings/cronjob/tasks");
+		navigation::active("settings/cronjob");
 	}
 }

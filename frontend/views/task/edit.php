@@ -32,7 +32,7 @@ class edit extends tasks_edit{
 		$this->handlingScheduleError();
 	}
 	private function setNavigation(){
-		navigation::active("settings/cronjob/tasks");
+		navigation::active("settings/cronjob");
 	}
 	private function handlingScheduleError(){
 		foreach(array("months", "days", "hours", "minutes") as $item){

@@ -23,7 +23,7 @@ class listview extends taskListView{
 			translator::trans("list"),
 			translator::trans("cronjob.tasks")
 		));
-		navigation::active("settings/cronjob/tasks");
+		navigation::active("settings/cronjob");
 		$this->setButtons();
 		$this->btnAdd = parent::$canAdd;
 	}
@@ -34,21 +34,7 @@ class listview extends taskListView{
 				$cronjob = new menuItem("cronjob");
 				$cronjob->setTitle(translator::trans("cronjob"));
 				$cronjob->setIcon("fa fa-undo");
-
-				$create_task = new menuItem("create_task");
-				$create_task->setTitle(translator::trans("cronjob.task.create"));
-				$create_task->setIcon("fa fa-plus");
-				$create_task->setURL(userpanel\url('settings/cronjob/tasks/create'));
-
-				$tasks = new menuItem("tasks");
-				$tasks->setTitle(translator::trans("cronjob.tasks"));
-				$tasks->setIcon("fa fa-tasks");
-				$tasks->setURL(userpanel\url('settings/cronjob/tasks'));
-
-				if(parent::$canAdd){
-					$cronjob->addItem($create_task);
-				}
-				$cronjob->addItem($tasks);
+				$cronjob->setURL(userpanel\url('settings/cronjob/tasks'));
 				$settings->addItem($cronjob);
 			}
 		}
