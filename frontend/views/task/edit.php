@@ -82,7 +82,7 @@ class edit extends tasks_edit{
 				'value' => $task->name,
 				'title' => $title ? $title : $task->name,
 				'data' => array(
-					'schedules' => json\encode(dbObject::objectToArray($task->name == $this->getDataForm('name') ? $this->getDataForm('schedules') : $task->data['schedules']))
+					'schedules' => dbObject::objectToArray($task->name == $this->getDataForm('name') ? $this->getDataForm('schedules') : $task->data['schedules'])
 				)
 			);
 		}
@@ -91,7 +91,8 @@ class edit extends tasks_edit{
 				'value' => $formname,
 				'title' => $formname,
 				'data' => array(
-					'schedules' => json\encode(dbObject::objectToArray($this->getDataForm('schedules')))
+					'schedules' => dbObject::objectToArray($this->getDataForm('schedules')),
+					'custom' => true
 				)
 			));
 		}

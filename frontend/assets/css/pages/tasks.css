@@ -29,11 +29,11 @@ body.rtl .checkbox-inline {
 body.rtl .cronjob-time .form-group {
     float: right;
 }
-body.rtl .cronjob-time .weekdays .form-group .checkbox-inline{
+body.rtl .cronjob-time .months .checkbox-inline{
     width: 50px;
     margin-left: 14px !important;
 }
-body.rtl .cronjob-time .weekdays .form-group .checkbox-inline label{
+body.rtl .cronjob-time .months .checkbox-inline label{
     min-width: 60px;
 }
 body.rtl .cronjob-time .form-group .checkbox-inline input[type="checkbox"] {

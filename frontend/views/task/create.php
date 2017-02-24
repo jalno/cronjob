@@ -9,7 +9,6 @@ use \themes\clipone\views\listTrait;
 use \themes\clipone\views\formTrait;
 use \themes\clipone\navigation\menuItem;
 
-use \packages\base\json;
 use \packages\base\translator;
 use \packages\base\frontend\theme;
 use \packages\base\db\dbObject;
@@ -80,7 +79,7 @@ class create extends tasks_create{
 				'value' => $task->name,
 				'title' => $title ? $title : $task->name,
 				'data' => array(
-					'schedules' => json\encode(dbObject::objectToArray($task->name == $this->getDataForm('name') ? $this->getDataForm('schedules') : $task->data['schedules']))
+					'schedules' => dbObject::objectToArray($task->name == $this->getDataForm('name') ? $this->getDataForm('schedules') : $task->data['schedules'])
 				)
 			);
 		}
@@ -89,7 +88,8 @@ class create extends tasks_create{
 				'value' => $formname,
 				'title' => $formname,
 				'data' => array(
-					'schedules' => json\encode(dbObject::objectToArray($this->getDataForm('schedules')))
+					'schedules' => dbObject::objectToArray($this->getDataForm('schedules')),
+					'custom' => true
 				)
 			));
 		}

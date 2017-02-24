@@ -8,8 +8,7 @@ use \packages\cronjob\task\schedule;
 $this->the_header();
 ?>
 <div class="row">
-	<div class="col-md-12">
-		<!-- start: BASIC TABLE PANEL -->
+	<div class="col-xs-12">
 		<div class="panel panel-default">
 			<div class="panel-heading">
 				<i class="fa fa-edit"></i> <?php echo translator::trans("cronjob.task.edit"); ?>
@@ -40,7 +39,7 @@ $this->the_header();
 						</div>
 					</div>
 					<div class="row process" <?php if(!$this->isCustom())echo('style="display: none;"'); ?>>
-						<div class="col-md-12">
+						<div class="col-xs-12">
 							<?php $this->createField(array(
 									'name' => 'process',
 									'ltr' => true,
@@ -50,22 +49,37 @@ $this->the_header();
 						</div>
 					</div>
 					<div class="row parameters" <?php if(!$this->isCustom())echo('style="display: none;"'); ?>>
-						<div class="col-md-12">
-							<?php echo translator::trans("cronjob.task.parameters"); ?>
-							<div class="panel-body">
-								<?php
-								$this->createField(array(
-									'name' => 'parameters',
-									'class' => 'tags'
-								));
-								?>
-							</div>
+						<div class="col-xs-12">
+							<?php
+							$this->createField(array(
+								'name' => 'parameters',
+								'class' => 'tags',
+								'label' => translator::trans("cronjob.task.parameters")
+							));
+							?>
 						</div>
 					</div>
 					<div class="row cronjob-time">
 						<div class="col-md-6">
 							<p> <?php echo translator::trans("cronjob.minutes"); ?> </p>
 							<div class="row">
+								<div class="col-xs-2">
+									<?php $this->createField(array(
+										'type' => 'checkbox',
+										'name' => 'allminutes',
+										'inline' => true,
+										'data' => array(
+											'type' => 'minutes'
+										),
+										'options' => array(
+											array(
+												'value' => 'all',
+												'label' => translator::trans("cronjob.all")
+											)
+										)
+									));
+									?>
+								</div>
 								<div class="col-xs-10">
 									<?php for($i=0;$i != 60;$i++){ 
 										$this->createField(array(
@@ -84,13 +98,19 @@ $this->the_header();
 										));
 									} ?>
 								</div>
+								
+							</div>
+						</div>
+						<div class="col-md-6">
+							<p> <?php echo translator::trans("cronjob.hours"); ?> </p>
+							<div class="row">
 								<div class="col-xs-2">
 									<?php $this->createField(array(
 										'type' => 'checkbox',
-										'name' => 'allminutes',
+										'name' => 'allhours',
 										'inline' => true,
 										'data' => array(
-											'type' => 'minutes'
+											'type' => 'hours'
 										),
 										'options' => array(
 											array(
@@ -101,11 +121,6 @@ $this->the_header();
 									));
 									?>
 								</div>
-							</div>
-						</div>
-						<div class="col-md-6">
-							<p> <?php echo translator::trans("cronjob.hours"); ?> </p>
-							<div class="row">
 								<div class="col-xs-10">
 									<?php for($i=0;$i != 24;$i++){ 
 										$this->createField(array(
@@ -124,13 +139,20 @@ $this->the_header();
 										));
 									} ?>
 								</div>
-								<div class="col-xs-2">
+							</div>
+						</div>
+					</div>
+					<div class="row cronjob-time">
+						<div class="col-md-6 months">
+							<p> <?php echo translator::trans("cronjob.months"); ?> </p>
+							<div class="row">
+								<div class="col-xs-3 col-sm-2">
 									<?php $this->createField(array(
 										'type' => 'checkbox',
-										'name' => 'allhours',
+										'name' => 'allmonths',
 										'inline' => true,
 										'data' => array(
-											'type' => 'hours'
+											'type' => 'months'
 										),
 										'options' => array(
 											array(
@@ -141,14 +163,7 @@ $this->the_header();
 									));
 									?>
 								</div>
-							</div>
-						</div>
-					</div>
-					<div class="row cronjob-time">
-						<div class="col-md-6 weekdays">
-							<p> <?php echo translator::trans("cronjob.months"); ?> </p>
-							<div class="row">
-								<div class="col-xs-10">
+								<div class="col-xs-9 col-sm-10">
 									<?php for($i=1;$i != 13;$i++){ 
 										$this->createField(array(
 											'type' => 'checkbox',
@@ -166,13 +181,18 @@ $this->the_header();
 										));
 									} ?>
 								</div>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<p> <?php echo translator::trans("cronjob.days"); ?> </p>
+							<div class="row">
 								<div class="col-xs-2">
 									<?php $this->createField(array(
 										'type' => 'checkbox',
-										'name' => 'allmonths',
+										'name' => 'alldays',
 										'inline' => true,
 										'data' => array(
-											'type' => 'months'
+											'type' => 'days'
 										),
 										'options' => array(
 											array(
@@ -183,11 +203,6 @@ $this->the_header();
 									));
 									?>
 								</div>
-							</div>
-						</div>
-						<div class="col-md-6">
-							<p> <?php echo translator::trans("cronjob.days"); ?> </p>
-							<div class="row">
 								<div class="col-xs-10">
 									<?php 
 									for($i=1;$i <= 31;$i++){ 
@@ -207,23 +222,6 @@ $this->the_header();
 										));
 									} ?>
 								</div>
-								<div class="col-xs-2">
-									<?php $this->createField(array(
-										'type' => 'checkbox',
-										'name' => 'alldays',
-										'inline' => true,
-										'data' => array(
-											'type' => 'days'
-										),
-										'options' => array(
-											array(
-												'value' => 'all',
-												'label' => translator::trans("cronjob.all")
-											)
-										)
-									));
-									?>
-								</div>
 							</div>
 						</div>
 					</div>
@@ -234,7 +232,6 @@ $this->the_header();
 				</form>
 			</div>
 		</div>
-		<!-- end: BASIC TABLE PANEL -->
 	</div>
 </div>
 <?php

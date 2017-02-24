@@ -29,7 +29,7 @@ var TasksEvents = function(){
     var validateData = function() {
         var $val = $(this).val();
         var $option = $('option[value="'+$val+'"]', this);
-        var $isNew = $option.data('select2-tag');
+        var $isNew = $option.data('select2-tag') || $option.data('custom');
         if($isNew){
             $("input[name='process']", $form).val("").parents(".process").slideDown();
             $("input[name='parameters']", $form).val("").parents(".parameters").slideDown();
@@ -43,8 +43,22 @@ var TasksEvents = function(){
             }
         }
     }
+    var initalForm = function(){
+        var $name = $('select[name=name]', $form);
+        var $val = $name.val();
+        var $option = $('option[value="' + $val + '"]', $name);
+        var $isNew = $option.data('select2-tag') || $option.data('custom');
+        if (!$isNew) {
+            $("input[name='process']", $form).val($option.data('process')).parents(".process").slideUp();
+            $("input[name='parameters']", $form).val($option.data('parameters')).parents(".parameters").slideUp();
+            var schedules;
+            if (schedules = $option.data('schedules')) {
+                validateSchedules(schedules);
+            }
+        }
+    }
     var runTagsInput = function () {
-        $("input[name='parameters']").tagsInput({
+        $("input[name=parameters]").tagsInput({
             width: 'auto',
             height: '210px'
         });
@@ -104,8 +118,7 @@ var TasksEvents = function(){
             runTagsInput();
             runSelect2();
             MyDatePlugin();
-            if($('select[name=name] option:selected').length == 0)
-                $('select[name=name]').trigger('change');
+            initalForm();
         }
     }
 }();
