@@ -236,4 +236,3 @@ $this->the_header();
 </div>
 <?php
 $this->the_footer();
-?>

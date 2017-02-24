@@ -71,15 +71,15 @@ class listview extends taskListView{
 	protected function getStatusForSelect(){
 		return array(
 			array(
-				'title' => translator::trans('cronjob.choose'),
+				'title' => '',
 				'value' => ''
 			),
 			array(
-				'title' => translator::trans('cronjob.active'),
+				'title' => translator::trans('cronjob.task.status.active'),
 				'value' => task::active
 			),
 			array(
-				'title' => translator::trans('cronjob.inactive'),
+				'title' => translator::trans('cronjob.task.status.deactive'),
 				'value' => task::deactive
 			)
 		);

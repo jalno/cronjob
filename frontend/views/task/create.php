@@ -57,11 +57,11 @@ class create extends tasks_create{
 	protected function getStatusForSelect(){
 		return array(
 			array(
-				'title' => translator::trans("cronjob.active"),
+				'title' => translator::trans('cronjob.task.status.active'),
 				'value' => task::active
 			),
 			array(
-				'title' => translator::trans("cronjob.deactive"),
+				'title' => translator::trans('cronjob.task.status.deactive'),
 				'value' => task::deactive
 			)
 		);

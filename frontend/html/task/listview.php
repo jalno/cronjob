@@ -6,14 +6,13 @@ use \packages\cronjob\task;
 $this->the_header();
 ?>
 <div class="row">
-	<div class="col-md-12">
-		<!-- start: BASIC TABLE PANEL -->
+	<div class="col-xs-12">
 		<div class="panel panel-default">
 			<div class="panel-heading">
-				<i class="fa fa-tasks"></i> <?php echo translator::trans("monitoring.tasks"); ?>
+				<i class="fa fa-tasks"></i> <?php echo translator::trans("cronjob.tasks"); ?>
 				<div class="panel-tools">
 					<?php if($this->btnAdd){ ?>
-					<a class="btn btn-xs btn-link tooltips" title="<?php echo translator::trans('monitoring.add'); ?>" href="<?php echo userpanel\url('settings/cronjob/tasks/create'); ?>"><i class="fa fa-plus"></i></a>
+					<a class="btn btn-xs btn-link tooltips" title="<?php echo translator::trans('cronjob.task.create'); ?>" href="<?php echo userpanel\url('settings/cronjob/tasks/create'); ?>"><i class="fa fa-plus"></i></a>
 					<?php } ?>
 					<a class="btn btn-xs btn-link tooltips" title="<?php echo translator::trans('search'); ?>" href="#search" data-toggle="modal" data-original-title=""><i class="fa fa-search"></i></a>
 					<a class="btn btn-xs btn-link panel-collapse collapses" href="#"></a>
@@ -28,9 +27,9 @@ $this->the_header();
 						<thead>
 							<tr>
 								<th class="center">#</th>
-								<th><?php echo translator::trans('monitoring.name'); ?></th>
-								<th><?php echo translator::trans('monitoring.process'); ?></th>
-								<th><?php echo translator::trans('monitoring.status'); ?></th>
+								<th><?php echo translator::trans('cronjob.task.name'); ?></th>
+								<th><?php echo translator::trans('cronjob.task.process'); ?></th>
+								<th><?php echo translator::trans('cronjob.task.status'); ?></th>
 								<?php if($hasButtons){ ?><th></th><?php } ?>
 							</tr>
 						</thead>
@@ -44,8 +43,8 @@ $this->the_header();
 									'label label-warning' => task::deactive
 								));
 								$statusTxt = utility::switchcase($task->status, array(
-									'monitoring.active' => task::active,
-									'monitoring.inactive' => task::deactive
+									'cronjob.task.status.active' => task::active,
+									'cronjob.task.status.deactive' => task::deactive
 								));
 							?>
 							<tr>
@@ -68,7 +67,6 @@ $this->the_header();
 				<?php $this->paginator(); ?>
 			</div>
 		</div>
-		<!-- end: BASIC TABLE PANEL -->
 	</div>
 </div>
 <div class="modal fade manage_tasks" id="search" tabindex="-1" data-show="true" role="dialog">
@@ -84,20 +82,20 @@ $this->the_header();
 				array(
 					'name' => 'id',
 					'type' => 'number',
-					'label' => translator::trans("monitoring.id"),
+					'label' => translator::trans("cronjob.task.id"),
 					'ltr' => true
 				),
 				array(
 					'name' => 'name',
-					'label' => translator::trans("monitoring.name")
+					'label' => translator::trans("cronjob.task.name")
 				),
 				array(
 					'name' => 'word',
-					'label' => translator::trans("monitoring.word-key")
+					'label' => translator::trans("cronjob.search.word-key")
 				),
 				array(
 					'type' => 'select',
-					'label' => translator::trans('monitoring.status'),
+					'label' => translator::trans('cronjob.task.status'),
 					'name' => 'status',
 					'options' => $this->getStatusForSelect()
 				),
@@ -115,10 +113,9 @@ $this->the_header();
 		</form>
 	</div>
 	<div class="modal-footer">
-		<button type="submit" form="TaskSearch" class="btn btn-success"><?php echo translator::trans("monitoring.search"); ?></button>
-		<button type="button" class="btn btn-default" data-dismiss="modal" aria-hidden="true"><?php echo translator::trans('monitoring.cancel'); ?></button>
+		<button type="submit" form="TaskSearch" class="btn btn-success"><?php echo translator::trans("cronjob.search"); ?></button>
+		<button type="button" class="btn btn-default" data-dismiss="modal" aria-hidden="true"><?php echo translator::trans('cronjob.search.cancel'); ?></button>
 	</div>
 </div>
 <?php
 $this->the_footer();
-?>
