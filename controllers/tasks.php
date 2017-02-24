@@ -79,20 +79,20 @@ class tasks extends controller{
 				}
 				db::where($parenthesis);
 			}
+			$view->setDataForm($this->inputsvalue($inputs));
+			db::pageLimit($this->items_per_page);
+			$cronjobsTasksData = db::paginate("cronjob_tasks", $this->page, array("cronjob_tasks.*"));
+			$view->setPaginate($this->page, db::totalCount(), $this->items_per_page);
+			$cronjobsTasks = array();
+			foreach($cronjobsTasksData as $cronjob){
+				$cronjobsTasks[] = new task($cronjob);
+			}
+			$view->setDataList($cronjobsTasks);
+
 		}catch(inputValidation $error){
 			$view->setFormError(FormError::fromException($error));
 			$this->response->setStatus(false);
 		}
-		$view->setDataForm($this->inputsvalue($inputs));
-		db::orderBy('id', 'DESC');
-		db::pageLimit($this->items_per_page);
-		$cronjobsTasksData = db::paginate("cronjob_tasks", $this->page, array("cronjob_tasks.*"));
-		$view->setPaginate($this->page, db::totalCount(), $this->items_per_page);
-		$cronjobsTasks = array();
-		foreach($cronjobsTasksData as $cronjob){
-			$cronjobsTasks[] = new task($cronjob);
-		}
-		$view->setDataList($cronjobsTasks);
 		$this->response->setView($view);
 		return $this->response;
 	}
