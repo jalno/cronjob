@@ -109,7 +109,7 @@ class tasks extends controller{
 			try{
 				$task->delete();
 				$this->response->setStatus(true);
-				$this->response->Go(userpanel\url("cronjob/tasks"));
+				$this->response->Go(userpanel\url("settings/cronjob/tasks"));
 			}catch(inputValidation $error){
 				$view->setFormError(FormError::fromException($error));
 			}
@@ -483,7 +483,7 @@ class tasks extends controller{
 					}
 				}
 				$this->response->setStatus(true);
-				$this->response->Go(userpanel\url("cronjob/tasks/edit/{$task->id}"));
+				$this->response->Go(userpanel\url("settings/cronjob/tasks/edit/{$task->id}"));
 			}catch(inputValidation $error){
 				$view->setFormError(FormError::fromException($error));
 			}catch(duplicateRecord $error){

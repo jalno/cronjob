@@ -13,7 +13,7 @@ $this->the_header();
 				<i class="fa fa-tasks"></i> <?php echo translator::trans("monitoring.tasks"); ?>
 				<div class="panel-tools">
 					<?php if($this->btnAdd){ ?>
-					<a class="btn btn-xs btn-link tooltips" title="<?php echo translator::trans('monitoring.add'); ?>" href="<?php echo userpanel\url('cronjob/tasks/create'); ?>"><i class="fa fa-plus"></i></a>
+					<a class="btn btn-xs btn-link tooltips" title="<?php echo translator::trans('monitoring.add'); ?>" href="<?php echo userpanel\url('settings/cronjob/tasks/create'); ?>"><i class="fa fa-plus"></i></a>
 					<?php } ?>
 					<a class="btn btn-xs btn-link tooltips" title="<?php echo translator::trans('search'); ?>" href="#search" data-toggle="modal" data-original-title=""><i class="fa fa-search"></i></a>
 					<a class="btn btn-xs btn-link panel-collapse collapses" href="#"></a>
@@ -37,8 +37,8 @@ $this->the_header();
 						<tbody>
 							<?php
 							foreach($this->getDataList() as $task){
-								$this->setButtonParam('task_edit', 'link', userpanel\url("cronjob/tasks/edit/".$task->id));
-								$this->setButtonParam('task_delete', 'link', userpanel\url("cronjob/tasks/delete/".$task->id));
+								$this->setButtonParam('task_edit', 'link', userpanel\url("settings/cronjob/tasks/edit/".$task->id));
+								$this->setButtonParam('task_delete', 'link', userpanel\url("settings/cronjob/tasks/delete/".$task->id));
 								$statusClass = utility::switchcase($task->status, array(
 									'label label-success' => task::active,
 									'label label-warning' => task::deactive
@@ -77,7 +77,7 @@ $this->the_header();
 		<h4 class="modal-title"><?php echo translator::trans('monitoring.search'); ?></h4>
 	</div>
 	<div class="modal-body">
-		<form id="TaskSearch" class="form-horizontal" action="<?php echo userpanel\url("cronjob/tasks"); ?>" method="GET">
+		<form id="TaskSearch" class="form-horizontal" action="<?php echo userpanel\url("settings/cronjob/tasks"); ?>" method="GET">
 			<?php
 			$this->setHorizontalForm('sm-3','sm-9');
 			$feilds = array(

@@ -16,7 +16,7 @@ $this->the_header();
 				</div>
 			</div>
 			<div class="panel-body">
-				<form class="create_form" action="<?php echo userpanel\url("cronjob/tasks/create"); ?>" method="post">
+				<form class="create_form" action="<?php echo userpanel\url("settings/cronjob/tasks/create"); ?>" method="post">
 					<div class="row">
 						<div class="col-md-6">
 							<?php $this->createField(array(

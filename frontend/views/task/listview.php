@@ -38,12 +38,12 @@ class listview extends taskListView{
 				$create_task = new menuItem("create_task");
 				$create_task->setTitle(translator::trans("cronjob.task.create"));
 				$create_task->setIcon("fa fa-plus");
-				$create_task->setURL(userpanel\url('cronjob/tasks/create'));
+				$create_task->setURL(userpanel\url('settings/cronjob/tasks/create'));
 
 				$tasks = new menuItem("tasks");
 				$tasks->setTitle(translator::trans("cronjob.tasks"));
 				$tasks->setIcon("fa fa-tasks");
-				$tasks->setURL(userpanel\url('cronjob/tasks'));
+				$tasks->setURL(userpanel\url('settings/cronjob/tasks'));
 
 				if(parent::$canAdd){
 					$cronjob->addItem($create_task);
