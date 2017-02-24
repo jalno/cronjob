@@ -1,0 +1,20 @@
+{
+	"files":[
+		{
+			"classes":["views\\cronjob\\task\\listview"],
+			"file":"views/task/listview.php"
+		},
+		{
+			"classes":["views\\cronjob\\task\\delete"],
+			"file":"views/task/delete.php"
+		},
+		{
+			"classes":["views\\cronjob\\task\\edit"],
+			"file":"views/task/edit.php"
+		},
+		{
+			"classes":["views\\cronjob\\task\\create"],
+			"file":"views/task/create.php"
+		}
+	]
+}

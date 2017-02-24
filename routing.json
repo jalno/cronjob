@@ -1,3 +1,18 @@
 [
-
+	{
+		"path": ["userpanel", "cronjob", "tasks"],
+		"controller": "controllers\\tasks@listview"
+	},
+	{
+		"path": ["userpanel", "cronjob", "tasks", "delete", {"type":"dynamic", "name":"task", "regex":"/^(\\d+)$/"}],
+		"controller": "controllers\\tasks@delete"
+	},
+	{
+		"path": ["userpanel", "cronjob", "tasks", "edit", {"type":"dynamic", "name":"task", "regex":"/^(\\d+)$/"}],
+		"controller": "controllers\\tasks@edit"
+	},
+	{
+		"path": ["userpanel", "cronjob", "tasks", "create"],
+		"controller": "controllers\\tasks@create"
+	}
 ]

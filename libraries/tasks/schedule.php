@@ -2,6 +2,13 @@
 namespace packages\cronjob\task;
 use \packages\base\db\dbObject;
 class schedule extends dbObject{
+	const saturday = 1;
+	const sunday = 2;
+	const monday = 3;
+	const tuesday = 4;
+	const wednesday = 5;
+	const thursday = 6;
+	const friday = 7;
 	protected $dbTable = "cronjob_schedules";
 	protected $primaryKey = "id";
 	protected $dbFields = array(

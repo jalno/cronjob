@@ -1,0 +1,34 @@
+{
+	"author": {
+		"name" : "‌Mahdi aebdi",
+		"website" : "http://www.mhdabedi.tk/"
+	},
+	"rtl": true,
+	"phrases":{
+		"cronjob": "دستورات تکرار شونده",
+		"cronjob.task.create": "ایجاد دستور جدید",
+		"cronjob.task.edit": "ویرایش دستور",
+		"cronjob.tasks": "دستور ها",
+		"cronjob.active": "فعال",
+		"cronjob.deactive": "غیر فعال",
+		"cronjob.task.name": "نام",
+		"cronjob.task.status": "وضعیت",
+		"cronjob.task.process": "روند",
+		"cronjob.task.parameters": "پارامتر ها",
+		"cronjob.edit": "ویرایش",
+		"cronjob.return": "بازگشت",
+		"cronjob.create": "ایجاد",
+		"cronjob.minute": "دقیقه",
+		"cronjob.all": "همه",
+		"cronjob.minutes": "دقیقه‌ها",
+		"cronjob.hours": "ساعت‌ها",
+		"cronjob.days": "روزها",
+		"cronjob.months": "ماه‌ها",
+		"cronjob.weekdays": "روزهای‌هفته",
+		"error.schedule.inputvalidation.months": "هیچ ماهی برای اجرای دستور مشخص نشده! <br> در صورتی که میخواهید هر ماه انجام شود از گزینه 'همه' استفاده کنید.",
+		"error.schedule.inputvalidation.days": "هیچ روزی برای اجرای دستور مشخص نشده! <br> در صورتی که میخواهید هر روز انجام شود از گزینه 'همه' استفاده کنید.",
+		"error.schedule.inputvalidation.hours": "هیچ ساعتی برای اجرای دستور مشخص نشده! <br> در صورتی که میخواهید هر ساعت انجام شود از گزینه 'همه' استفاده کنید.",
+		"error.schedule.inputvalidation.minutes": "هیچ دقیقه‌ای برای اجرای دستور مشخص نشده! <br> در صورتی که میخواهید هر دقیقه انجام شود از گزینه 'همه' استفاده کنید."
+
+	}
+}

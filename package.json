@@ -1,5 +1,13 @@
 {
 	"permissions": "*",
+	"frontend": "frontend",
+	"dependencies": ["base", "userpanel"],
 	"routing": "routing.json",
-	"autoload": "autoloader.json"
+	"autoload": "autoloader.json",
+	"events": [
+		{
+			"name":"\\packages\\userpanel\\events\\usertype_permissions_list",
+			"listener": "listeners\\settings\\usertype@permissions_list"
+		}
+	]
 }

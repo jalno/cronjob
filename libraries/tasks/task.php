@@ -4,6 +4,7 @@ use \packages\base\db;
 use \packages\base\date;
 use \packages\base\db\parenthesis;
 use \packages\base\db\dbObject;
+use \packages\cronjob\task\schedule;
 class task extends dbObject{
 	const active = 1;
 	const deactive = 2;
@@ -63,5 +64,18 @@ class task extends dbObject{
 			$tasks[] = new static($data);
 		}
 		return $tasks;
+	}
+	public function hasSchedule(schedule $newSchedule){
+		foreach($this->schedules as $schedule){
+			if(
+				($newSchedule->month === $schedule->month) and
+				($newSchedule->day === $schedule->day) and
+				($newSchedule->hour === $schedule->hour) and
+				($newSchedule->minute === $schedule->minute)
+			){
+				return $schedule;
+			}
+		}
+		return false;
 	}
 }
