@@ -36,6 +36,7 @@
 		"usertype.permissions.cronjob_task_list": "لیست وظیفه های تکرار شونده",
 		"usertype.permissions.cronjob_task_create": "افزدون وظیفه تکرار شونده",
 		"usertype.permissions.cronjob_task_edit": "ویرایش وظیفه تکرار شونده",
-		"usertype.permissions.cronjob_task_delete": "حذف وظیفه تکرار شونده"
+		"usertype.permissions.cronjob_task_delete": "حذف وظیفه تکرار شونده",
+		"error.cronjob.task.notfound": "هیچ دستور تکرار شونده ای یافت نشد، درصورت افزودن دستور آن را در اینجا مشاهده خواهید کرد."
 	}
 }

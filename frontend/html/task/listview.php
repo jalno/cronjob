@@ -7,6 +7,7 @@ $this->the_header();
 ?>
 <div class="row">
 	<div class="col-xs-12">
+	<?php if(!empty($this->getDataList())){ ?>
 		<div class="panel panel-default">
 			<div class="panel-heading">
 				<i class="fa fa-tasks"></i> <?php echo translator::trans("cronjob.tasks"); ?>
@@ -67,6 +68,7 @@ $this->the_header();
 				<?php $this->paginator(); ?>
 			</div>
 		</div>
+	<?php } ?>
 	</div>
 </div>
 <div class="modal fade manage_tasks" id="search" tabindex="-1" data-show="true" role="dialog">

@@ -1,19 +1,17 @@
 <?php
 namespace themes\clipone\views\cronjob\task;
 use \packages\userpanel;
-
 use \themes\clipone\breadcrumb;
 use \themes\clipone\navigation;
 use \themes\clipone\viewTrait;
 use \themes\clipone\views\listTrait;
 use \themes\clipone\views\formTrait;
 use \themes\clipone\navigation\menuItem;
-
 use \packages\base\translator;
 use \packages\base\frontend\theme;
+use \packages\base\view\error;
 use \packages\cronjob\task;
 use \packages\cronjob\views\task\listview as taskListView;
-
 class listview extends taskListView{
 	use viewTrait,listTrait,formTrait;
 	protected $btnAdd;
@@ -26,6 +24,24 @@ class listview extends taskListView{
 		navigation::active("settings/cronjob");
 		$this->setButtons();
 		$this->btnAdd = parent::$canAdd;
+		if(empty($this->getDataList())){
+			$this->addNotFoundError();
+		}
+	}
+	private function addNotFoundError(){
+		$error = new error();
+		$error->setType(error::NOTICE);
+		$error->setCode('cronjob.task.notfound');
+		if($this->btnAdd){
+			$error->setData([
+				[
+					'type' => 'btn-success',
+					'txt' => translator::trans('cronjob.task.create'),
+					'link' => userpanel\url('settings/cronjob/tasks/create')
+				]
+			], 'btns');
+		}
+		$this->addError($error);
 	}
 	public static function onSourceLoad(){
 		parent::onSourceLoad();
