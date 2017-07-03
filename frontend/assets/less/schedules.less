@@ -1,0 +1,61 @@
+body.cronjob-task{
+    .tagsinput{
+        direction: ltr;
+        input{
+            width: 200px !important;
+        }
+        div{
+            float: left;
+        }
+    }
+    .checkbox-inline {
+        padding-left: 0;
+        padding-right: 0px;
+        width: 15px;
+        text-align: center;
+        margin: 0 0 0 10px !important;
+        label{
+            min-height: 20px;
+            padding-left: 0;
+            margin-bottom: 0;
+            font-weight: 400;
+            cursor: pointer;
+            padding-right: 0;
+            min-width: 20px;
+            display: block;
+            &.badge-success{
+                min-width: 33px;
+            }
+            &::before{
+                border: none;
+                background-color: transparent;
+            }
+            &.checked{
+                &::after{
+                    content: "";
+                }
+            }
+        }
+    }
+    .cronjob-time {
+        .form-group {
+            float: right;
+        }
+        .months {
+            .checkbox-inline{
+                width: 50px;
+                margin-left: 14px !important;
+                label{
+                    min-width: 60px;
+                }
+            }
+        }
+        .form-group{
+            .checkbox-inline{
+                input[type="checkbox"] {
+                    display: none;
+                }
+            }
+        }
+    }
+}
