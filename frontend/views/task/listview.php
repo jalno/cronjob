@@ -8,12 +8,11 @@ use \themes\clipone\views\listTrait;
 use \themes\clipone\views\formTrait;
 use \themes\clipone\navigation\menuItem;
 use \packages\base\translator;
-use \packages\base\frontend\theme;
 use \packages\base\view\error;
 use \packages\cronjob\task;
 use \packages\cronjob\views\task\listview as taskListView;
 class listview extends taskListView{
-	use viewTrait,listTrait,formTrait;
+	use viewTrait, listTrait, formTrait;
 	protected $btnAdd;
 	function __beforeLoad(){
 		$this->setTitle(array(
@@ -60,7 +59,7 @@ class listview extends taskListView{
 		$this->setButton('task_edit', $this->canEdit, array(
 			'title' => translator::trans('edit'),
 			'icon' => 'fa fa-edit',
-			'classes' => array('btn', 'btn-xs', 'btn-warning')
+			'classes' => array('btn', 'btn-xs', 'btn-teal')
 		));
 		$this->setButton('task_delete', $this->canDel, array(
 			'title' => translator::trans('delete'),

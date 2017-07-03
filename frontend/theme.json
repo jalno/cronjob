@@ -11,6 +11,18 @@
 		"fa_IR" : "langs/fa_IR.json"
 	},
 	"assets":[
+		{"type":"package", "name":"jquery"},
+		{"type":"package", "name":"jquery-ui"},
+		{"type":"package", "name":"webuilder"},
+		{"type":"package", "name":"jquery.growl"},
+		{"type":"package", "name":"bootstrap"},
+		{"type":"package", "name":"bootstrap-inputmsg"},
+		{"type":"package", "name":"select2"},
+		{"type":"package", "name":"bootstrap-tagsinput"},
+		{"type":"css", "file":"node_modules/select2/dist/css/select2.css"},
+		{"type":"less", "file":"assets/less/tags.less"},
+		{"type":"less", "file":"assets/less/schedules.less"},
+		{"type":"ts", "file":"assets/ts/Main.ts"}
 	],
 	"views":[
 		{

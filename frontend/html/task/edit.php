@@ -17,7 +17,7 @@ $this->the_header();
 				</div>
 			</div>
 			<div class="panel-body">
-				<form class="create_form" action="<?php echo userpanel\url("settings/cronjob/tasks/edit/{$this->task->id}"); ?>" method="post">
+				<form class="managements" action="<?php echo userpanel\url("settings/cronjob/tasks/edit/{$this->task->id}"); ?>" method="post">
 					<div class="row">
 						<div class="col-md-6">
 							<?php $this->createField(array(
@@ -53,7 +53,9 @@ $this->the_header();
 							<?php
 							$this->createField(array(
 								'name' => 'parameters',
-								'class' => 'tags',
+								'data' => [
+									'role' => 'tagsinput'
+								],
 								'label' => translator::trans("cronjob.task.parameters")
 							));
 							?>
@@ -227,7 +229,7 @@ $this->the_header();
 					</div>
 					<p class="text-left">
 						<a href="<?php echo userpanel\url('cronjob/tasks'); ?>" class="btn btn-light-grey"><i class="fa fa-chevron-circle-right"></i> <?php echo translator::trans('cronjob.return'); ?></a>
-						<button type="submit" class="btn btn-yellow"><i class="fa fa-edit"></i> <?php echo translator::trans("cronjob.edit") ?></button>
+						<button type="submit" class="btn btn-teal"><i class="fa fa-edit"></i> <?php echo translator::trans("cronjob.edit") ?></button>
 					</p>
 				</form>
 			</div>
