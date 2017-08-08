@@ -284,10 +284,11 @@ class tasks extends controller{
 						if(isset($inputs['parameters'])){
 							$task->parameters = $this->validateParameters($inputs['parameters']);
 						}
-						if(isset($inputs['status'])){
-							$task->status = $inputs['status'];
-						}
 					}
+				}
+
+				if(isset($inputs['status'])){
+					$task->status = $inputs['status'];
 				}
 				$task->save();
 				if(!isset($inputs['months'])){
