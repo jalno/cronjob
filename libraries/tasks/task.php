@@ -49,6 +49,7 @@ class task extends dbObject{
 		db::where($day);
 		db::where($hour);
 		db::where($minute);
+		db::where("cronjob_tasks.status", self::active);
 		db::setQueryOption('DISTINCT');
 		$datas = db::get("cronjob_tasks", null, array("cronjob_tasks.*"));
 		foreach($datas as $key => $data){
