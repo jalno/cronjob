@@ -74,6 +74,10 @@
 		{
 			"classes":["views\\task\\create"],
 			"file":"views/task/create.php"
+		},
+		{
+			"classes":["listeners\\notice"],
+			"file":"listeners/notice.php"
 		}
 	]
 }
