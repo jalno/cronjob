@@ -70,13 +70,13 @@ $this->the_header();
 										'type' => 'checkbox',
 										'name' => 'allminutes',
 										'inline' => true,
-										'data' => array(
-											'type' => 'minutes'
-										),
 										'options' => array(
 											array(
 												'value' => 'all',
-												'label' => translator::trans("cronjob.all")
+												'label' => translator::trans("cronjob.all"),
+												'data' => array(
+													'type' => 'minutes'
+												)
 											)
 										)
 									));
@@ -88,13 +88,13 @@ $this->the_header();
 											'type' => 'checkbox',
 											'name' => 'minutes[]',
 											'inline' => true,
-											'data' => array(
-												'type' => 'minutes'
-											),
 											'options' => array(
 												array(
 													'value' => $i,
-													'label' => $i
+													'label' => $i,
+													'data' => array(
+														'type' => 'minutes'
+													)
 												)
 											)
 										));
@@ -111,13 +111,13 @@ $this->the_header();
 										'type' => 'checkbox',
 										'name' => 'allhours',
 										'inline' => true,
-										'data' => array(
-											'type' => 'hours'
-										),
 										'options' => array(
 											array(
 												'value' => 'all',
-												'label' => translator::trans("cronjob.all")
+												'label' => translator::trans("cronjob.all"),
+												'data' => array(
+													'type' => 'hours'
+												)
 											)
 										)
 									));
@@ -129,13 +129,13 @@ $this->the_header();
 											'type' => 'checkbox',
 											'name' => 'hours[]',
 											'inline' => true,
-											'data' => array(
-												'type' => 'hours'
-											),
 											'options' => array(
 												array(
 													'value' => $i,
-													'label' => $i
+													'label' => $i,
+													'data' => array(
+														'type' => 'hours'
+													)
 												)
 											)
 										));
@@ -153,13 +153,13 @@ $this->the_header();
 										'type' => 'checkbox',
 										'name' => 'allmonths',
 										'inline' => true,
-										'data' => array(
-											'type' => 'months'
-										),
 										'options' => array(
 											array(
 												'value' => 'all',
-												'label' => translator::trans("cronjob.all")
+												'label' => translator::trans("cronjob.all"),
+												'data' => array(
+													'type' => 'months'
+												)
 											)
 										)
 									));
@@ -171,13 +171,13 @@ $this->the_header();
 											'type' => 'checkbox',
 											'name' => 'months[]',
 											'inline' => true,
-											'data' => array(
-												'type' => 'months'
-											),
 											'options' => array(
 												array(
 													'value' => $i,
-													'label' => date::format("F", date::mktime(0, 0, 0, $i))
+													'label' => date::format("F", date::mktime(0, 0, 0, $i)),
+													'data' => array(
+														'type' => 'months'
+													)
 												)
 											)
 										));
@@ -193,13 +193,13 @@ $this->the_header();
 										'type' => 'checkbox',
 										'name' => 'alldays',
 										'inline' => true,
-										'data' => array(
-											'type' => 'days'
-										),
 										'options' => array(
 											array(
 												'value' => 'all',
-												'label' => translator::trans("cronjob.all")
+												'label' => translator::trans("cronjob.all"),
+												'data' => array(
+													'type' => 'days'
+												)
 											)
 										)
 									));
@@ -212,13 +212,13 @@ $this->the_header();
 											'type' => 'checkbox',
 											'name' => 'days[]',
 											'inline' => true,
-											'data' => array(
-												'type' => 'days'
-											),
 											'options' => array(
 												array(
 													'value' => $i,
-													'label' => $i
+													'label' => $i,
+													'data' => array(
+														'type' => 'days'
+													)
 												)
 											)
 										));
