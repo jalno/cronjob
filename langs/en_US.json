@@ -10,11 +10,11 @@
 		"notice.note.view.name.packages.cronjob.views.task.edit": "پنل کاربری -> تنظیمات -> دستورات تکرار شونده -> ویرایش",
 		"notice.note.view.name.packages.cronjob.views.task.delete": "پنل کاربری -> تنظیمات -> دستورات تکرار شونده -> حذف",
 
-		"usertype.permissions.cronjob": "دستورات تکرار شونده",
-		"usertype.permissions.cronjob_task": "وظیفه‌های تکرارشونده",
-		"usertype.permissions.cronjob_task_list": "لیست وظیفه های تکرار شونده",
-		"usertype.permissions.cronjob_task_create": "افزودن وظیفه تکرار شونده",
-		"usertype.permissions.cronjob_task_edit": "ویرایش وظیفه تکرار شونده",
-		"usertype.permissions.cronjob_task_delete": "حذف وظیفه تکرار شونده"
+		"usertype.permissions.cronjob": "Cronjob",
+		"usertype.permissions.cronjob_task": "Cronjob tasks",
+		"usertype.permissions.cronjob_task_list": "Cronjob tasks list",
+		"usertype.permissions.cronjob_task_create": "Add cronjob task",
+		"usertype.permissions.cronjob_task_edit": "Edit cronjob task",
+		"usertype.permissions.cronjob_task_delete": "Delete cronjob task"
 	}
 }
