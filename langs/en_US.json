@@ -1,0 +1,20 @@
+{
+	"author": {
+		"name" : "Amir.h Yeganemehr",
+		"website" : "http://www.yeganemehr.ir/"
+	},
+	"rtl": true,
+	"phrases":{
+		"notice.note.view.name.packages.cronjob.views.task.listview": "Userpanel -> Settings -> Cronjob",
+		"notice.note.view.name.packages.cronjob.views.task.create": "Userpanel -> Settings -> Cronjob -> Create",
+		"notice.note.view.name.packages.cronjob.views.task.edit": "Userpanel -> Settings -> Cronjob -> Edit",
+		"notice.note.view.name.packages.cronjob.views.task.delete": "Userpanel -> Settings -> Cronjob -> Delete",
+
+		"usertype.permissions.cronjob": "Cronjob",
+		"usertype.permissions.cronjob_task": "Cronjob tasks",
+		"usertype.permissions.cronjob_task_list": "Cronjob tasks list",
+		"usertype.permissions.cronjob_task_create": "Add cronjob task",
+		"usertype.permissions.cronjob_task_edit": "Edit cronjob task",
+		"usertype.permissions.cronjob_task_delete": "Delete cronjob task"
+	}
+}

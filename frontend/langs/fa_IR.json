@@ -33,10 +33,6 @@
 		"error.schedule.inputvalidation.days": "هیچ روزی برای اجرای دستور مشخص نشده! <br> در صورتی که میخواهید هر روز انجام شود از گزینه 'همه' استفاده کنید.",
 		"error.schedule.inputvalidation.hours": "هیچ ساعتی برای اجرای دستور مشخص نشده! <br> در صورتی که میخواهید هر ساعت انجام شود از گزینه 'همه' استفاده کنید.",
 		"error.schedule.inputvalidation.minutes": "هیچ دقیقه‌ای برای اجرای دستور مشخص نشده! <br> در صورتی که میخواهید هر دقیقه انجام شود از گزینه 'همه' استفاده کنید.",
-		"usertype.permissions.cronjob_task_list": "لیست وظیفه های تکرار شونده",
-		"usertype.permissions.cronjob_task_create": "افزدون وظیفه تکرار شونده",
-		"usertype.permissions.cronjob_task_edit": "ویرایش وظیفه تکرار شونده",
-		"usertype.permissions.cronjob_task_delete": "حذف وظیفه تکرار شونده",
 		"error.cronjob.task.notfound": "هیچ دستور تکرار شونده ای یافت نشد، درصورت افزودن دستور آن را در اینجا مشاهده خواهید کرد."
 	}
 }
