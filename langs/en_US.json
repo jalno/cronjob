@@ -5,10 +5,10 @@
 	},
 	"rtl": true,
 	"phrases":{
-		"notice.note.view.name.packages.cronjob.views.task.listview": "پنل کاربری -> تنظیمات -> دستورات تکرار شونده",
-		"notice.note.view.name.packages.cronjob.views.task.create": "پنل کاربری -> تنظیمات -> دستورات تکرار شونده -> ایجاد",
-		"notice.note.view.name.packages.cronjob.views.task.edit": "پنل کاربری -> تنظیمات -> دستورات تکرار شونده -> ویرایش",
-		"notice.note.view.name.packages.cronjob.views.task.delete": "پنل کاربری -> تنظیمات -> دستورات تکرار شونده -> حذف",
+		"notice.note.view.name.packages.cronjob.views.task.listview": "Userpanel -> Settings -> Cronjob",
+		"notice.note.view.name.packages.cronjob.views.task.create": "Userpanel -> Settings -> Cronjob -> Create",
+		"notice.note.view.name.packages.cronjob.views.task.edit": "Userpanel -> Settings -> Cronjob -> Edit",
+		"notice.note.view.name.packages.cronjob.views.task.delete": "Userpanel -> Settings -> Cronjob -> Delete",
 
 		"usertype.permissions.cronjob": "Cronjob",
 		"usertype.permissions.cronjob_task": "Cronjob tasks",
