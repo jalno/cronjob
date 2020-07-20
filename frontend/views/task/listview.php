@@ -21,6 +21,7 @@ class listview extends taskListView{
 			translator::trans("cronjob.tasks")
 		));
 		navigation::active("settings/cronjob");
+		$this->addBodyClass('cronjob-task');
 		$this->setButtons();
 		$this->btnAdd = parent::$canAdd;
 		if(empty($this->getDataList())){

@@ -23,6 +23,7 @@ class delete extends tasks_delete{
 			translator::trans("cronjob"),
 			translator::trans("cronjob.task.delete")." ".$this->task->name
 		));
+		$this->addBodyClass('cronjob-task');
 		$this->setNavigation();
 	}
 	private function setNavigation(){
