@@ -1,10 +1,17 @@
 <?php
 namespace packages\cronjob;
-use \packages\base\db;
-use \packages\base\date;
-use \packages\base\db\parenthesis;
-use \packages\base\db\dbObject;
-use \packages\cronjob\task\schedule;
+
+use packages\base\{Date, DB, DB\DBObject, DB\Parenthesis};
+use packages\cronjob\task\Schedule;
+
+/**
+ * @property int $id
+ * @property string $name
+ * @property string $process
+ * @property array|null $parameters
+ * @property "1"|"2" $status
+ * @property \packages\cronjob\Task\Schedule[] $schedules
+ */
 class task extends dbObject{
 	const active = 1;
 	const deactive = 2;
