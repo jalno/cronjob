@@ -9,7 +9,7 @@ use packages\cronjob\task\Schedule;
  * @property string $name
  * @property string $process
  * @property array|null $parameters
- * @property "1"|"2" $status
+ * @property int $status
  * @property \packages\cronjob\Task\Schedule[] $schedules
  */
 class task extends dbObject{
