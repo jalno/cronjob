@@ -1,7 +1,6 @@
 <?php
-use \packages\base\translator;
 
-use \packages\userpanel;
+use packages\userpanel;
 
 $this->the_header();
 ?>
@@ -10,17 +9,17 @@ $this->the_header();
 		<!-- start: BASIC DELETE NEW -->
 		<form action="<?php echo userpanel\url('settings/cronjob/tasks/delete/'.$this->task->id); ?>" method="POST">
 			<div class="alert alert-block alert-warning fade in">
-				<h4 class="alert-heading"><i class="fa fa-exclamation-triangle"></i> <?php echo translator::trans("attention"); ?>!</h4>
+				<h4 class="alert-heading"><i class="fa fa-exclamation-triangle"></i> <?php echo t("error.notice.title"); ?>!</h4>
 				<p>
-					<?php echo translator::trans("monitoring.cronjob.task.delete.warning", array(
-						"id"=>$this->task->id,
-						"name"=>$this->task->name
+					<?php echo t("warnings.cronjob.task.delete", array(
+						"id"=> $this->task->id,
+						"name"=> ("cronjob.task.name." . $this->task->name)
 					)); ?>
 				</p>
 				<hr>
 				<p>
-					<a href="<?php echo userpanel\url('settings/cronjob/tasks'); ?>" class="btn btn-light-grey"><i class="fa fa-chevron-circle-right"></i> <?php echo translator::trans('monitoring.return'); ?></a>
-					<button type="submit" class="btn btn-danger"><i class="fa fa-trash-o tip"></i> <?php echo translator::trans("monitoring.delete") ?></button>
+					<a href="<?php echo userpanel\url("settings/cronjob/tasks"); ?>" class="btn btn-light-grey"><i class="fa fa-chevron-circle-right"></i> <?php echo t('cronjob.return'); ?></a>
+					<button type="submit" class="btn btn-danger"><i class="fa fa-trash-o tip"></i> <?php echo t("titles.cronjob.delete") ?></button>
 				</p>
 			</div>
 		</form>

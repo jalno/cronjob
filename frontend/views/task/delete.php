@@ -9,7 +9,6 @@ use \themes\clipone\views\listTrait;
 use \themes\clipone\views\formTrait;
 use \themes\clipone\navigation\menuItem;
 
-use \packages\base\translator;
 use \packages\base\frontend\theme;
 use \packages\cronjob\task;
 use \packages\cronjob\views\task\delete as tasks_delete;
@@ -19,10 +18,7 @@ class delete extends tasks_delete{
 	protected $task;
 	function __beforeLoad(){
 		$this->task = $this->getTask();
-		$this->setTitle(array(
-			translator::trans("cronjob"),
-			translator::trans("cronjob.task.delete")." ".$this->task->name
-		));
+		$this->setTitle(t("titles.cronjob.tasks.delete"));
 		$this->addBodyClass('cronjob-task');
 		$this->setNavigation();
 	}

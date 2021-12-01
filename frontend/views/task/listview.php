@@ -16,9 +16,9 @@ class listview extends taskListView{
 	protected $btnAdd;
 	function __beforeLoad(){
 		$this->setTitle(array(
-			translator::trans("cronjob"),
-			translator::trans("list"),
-			translator::trans("cronjob.tasks")
+			t("cronjob"),
+			t("list"),
+			t("cronjob.tasks")
 		));
 		navigation::active("settings/cronjob");
 		$this->addBodyClass('cronjob-task');
@@ -36,7 +36,7 @@ class listview extends taskListView{
 			$error->setData([
 				[
 					'type' => 'btn-success',
-					'txt' => translator::trans('cronjob.task.create'),
+					'txt' => t('cronjob.task.create'),
 					'link' => userpanel\url('settings/cronjob/tasks/create')
 				]
 			], 'btns');
@@ -48,7 +48,7 @@ class listview extends taskListView{
 		if(parent::$navigation){
 			if($settings = navigation::getByName("settings")){
 				$cronjob = new menuItem("cronjob");
-				$cronjob->setTitle(translator::trans("cronjob"));
+				$cronjob->setTitle(t("cronjob"));
 				$cronjob->setIcon("fa fa-undo");
 				$cronjob->setURL(userpanel\url('settings/cronjob/tasks'));
 				$settings->addItem($cronjob);
@@ -58,12 +58,12 @@ class listview extends taskListView{
 
 	public function setButtons(){
 		$this->setButton('task_edit', $this->canEdit, array(
-			'title' => translator::trans('edit'),
+			'title' => t('cronjob.edit'),
 			'icon' => 'fa fa-edit',
 			'classes' => array('btn', 'btn-xs', 'btn-teal')
 		));
 		$this->setButton('task_delete', $this->canDel, array(
-			'title' => translator::trans('delete'),
+			'title' => t('titles.cronjob.delete'),
 			'icon' => 'fa fa-times',
 			'classes' => array('btn', 'btn-xs', 'btn-bricky')
 		));
@@ -71,15 +71,15 @@ class listview extends taskListView{
 	protected function getComparisonsForSelect(){
 		return array(
 			array(
-				'title' => translator::trans('search.comparison.contains'),
+				'title' => t('search.comparison.contains'),
 				'value' => 'contains'
 			),
 			array(
-				'title' => translator::trans('search.comparison.equals'),
+				'title' => t('search.comparison.equals'),
 				'value' => 'equals'
 			),
 			array(
-				'title' => translator::trans('search.comparison.startswith'),
+				'title' => t('search.comparison.startswith'),
 				'value' => 'startswith'
 			)
 		);
@@ -91,11 +91,11 @@ class listview extends taskListView{
 				'value' => ''
 			),
 			array(
-				'title' => translator::trans('cronjob.task.status.active'),
+				'title' => t('cronjob.task.status.active'),
 				'value' => task::active
 			),
 			array(
-				'title' => translator::trans('cronjob.task.status.deactive'),
+				'title' => t('cronjob.task.status.deactive'),
 				'value' => task::deactive
 			)
 		);

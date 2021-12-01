@@ -1,10 +1,12 @@
 import * as $ from "jquery";
+import "jquery.growl";
 import "select2";
 import "../jquery.userAutoComplete";
 import "bootstrap-tagsinput";
-import { webuilder } from "webuilder";
+import "webuilder/formAjax";
 import "jquery.growl";
 import "bootstrap-inputmsg";
+
 export default class Managements{
 	private static $form = $('body.cronjob-task form.managements');
 	private static validateSchedules(schedules):void{
@@ -38,16 +40,22 @@ export default class Managements{
             }
         }
     }
-	private static runSelect2(){
-		$('select', Managements.$form).attr('dir','rtl').select2({
-			language:'fa',
+
+	private static runSelect2() {
+
+        const isRTL = Translator.isRTL();
+
+		$('select', Managements.$form).attr('dir', isRTL ? 'rtl' : 'ltr').select2({
+			language: Translator.getActiveShortLang(),
 			minimumResultsForSearch: Infinity
 		});
+
 		$('select[name=name]', Managements.$form).select2({
 			tags: true,
 			multiple: false,
-			language:'fa'
+			language: Translator.getActiveShortLang(),
 		});
+
 		$('select[name=name]', Managements.$form).on("change", Managements.validateData);
 	}
 	private static initalForm(){
@@ -125,24 +133,24 @@ export default class Managements{
 				data: new FormData(this as HTMLFormElement),
 				contentType: false,
 				processData: false,
-				success: (data: webuilder.AjaxResponse) => {
+				success: (response) => {
 					$.growl.notice({
-						title:"موفق",
-						message:"اطلاعات با موفقیت ذخیره شد ."
+						title: t("userpanel.success"),
+						message: t("userpanel.formajax.success"),
 					});
-					if(data.redirect){
-						window.location.href = data.redirect;
+					if (response.hasOwnProperty("redirect")) {
+						window.location.href = response.redirect;
 					}
 				},
-				error: function(error:webuilder.AjaxError){
-					if(error.error == 'data_duplicate' || error.error == 'data_validation'){
-						let $input = $('[name='+error.input+']');
+				error: function(response){
+					if(response.error == 'data_duplicate' || response.error == 'data_validation'){
+						let $input = $('[name='+response.input+']');
 						let $params = {
-							title: 'خطا',
-							message:''
+							title: t("error.fatal.title"),
+							message: '',
 						};
-						if(error.error == 'data_validation'){
-							$params.message = 'داده وارد شده معتبر نیست';
+						if (response.error == 'data_validation') {
+							$params.message = t(response.error);
 						}
 						if($input.length){
 							$input.inputMsg($params);
@@ -151,8 +159,8 @@ export default class Managements{
 						}
 					}else{
 						$.growl.error({
-							title:"خطا",
-							message:'درخواست شما توسط سرور قبول نشد'
+							title: t("error.fatal.title"),
+							message: t("userpanel.formajax.error"),
 						});
 					}
 				}
