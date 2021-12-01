@@ -10,7 +10,7 @@ use packages\cronjob\task\Schedule;
  * @property string $process
  * @property array|null $parameters
  * @property int $status
- * @property \packages\cronjob\Task\Schedule[] $schedules
+ * @property Schedule[] $schedules
  */
 class task extends dbObject{
 	const active = 1;
