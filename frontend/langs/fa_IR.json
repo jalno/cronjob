@@ -1,7 +1,7 @@
 {
 	"author": {
-		"name" : "‌Mahdi aebdi",
-		"website" : "http://www.mhdabedi.tk/"
+		"name" : "Jeyserver LTD",
+		"website" : "https://www.jeyserver.com/"
 	},
 	"rtl": true,
 	"phrases":{
@@ -33,6 +33,10 @@
 		"error.schedule.inputvalidation.days": "هیچ روزی برای اجرای دستور مشخص نشده! <br> در صورتی که میخواهید هر روز انجام شود از گزینه 'همه' استفاده کنید.",
 		"error.schedule.inputvalidation.hours": "هیچ ساعتی برای اجرای دستور مشخص نشده! <br> در صورتی که میخواهید هر ساعت انجام شود از گزینه 'همه' استفاده کنید.",
 		"error.schedule.inputvalidation.minutes": "هیچ دقیقه‌ای برای اجرای دستور مشخص نشده! <br> در صورتی که میخواهید هر دقیقه انجام شود از گزینه 'همه' استفاده کنید.",
-		"error.cronjob.task.notfound": "هیچ دستور تکرار شونده ای یافت نشد، درصورت افزودن دستور آن را در اینجا مشاهده خواهید کرد."
+		"error.cronjob.task.notfound": "هیچ دستور تکرار شونده ای یافت نشد، درصورت افزودن دستور آن را در اینجا مشاهده خواهید کرد.",
+		"titles.cronjob.delete": "حذف",
+		"warnings.cronjob.task.delete": "آیا از حذف دستور تکرار شونده با شناسه #{id} .اطمینان دارید؟ این عملیات غیر قابل بازگشت است.",
+		"titles.cronjob.tasks.delete": "حذف دستور تکرار شونده",
+		"titles.cronjob.tasks.edit": "ویرایش دستور تکرار شونده"
 	}
 }

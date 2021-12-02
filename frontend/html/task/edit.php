@@ -11,7 +11,7 @@ $this->the_header();
 	<div class="col-xs-12">
 		<div class="panel panel-default">
 			<div class="panel-heading">
-				<i class="fa fa-edit"></i> <?php echo translator::trans("cronjob.task.edit"); ?>
+				<i class="fa fa-edit"></i> <?php echo t("cronjob.task.edit"); ?>
 				<div class="panel-tools">
 					<a class="btn btn-xs btn-link panel-collapse collapses" href="#"></a>
 				</div>
@@ -23,7 +23,7 @@ $this->the_header();
 							<?php $this->createField(array(
 									'name' => 'name',
 									'type' => 'select',
-									'label' => translator::trans("cronjob.task.name"),
+									'label' => t("cronjob.task.name"),
 									'options' => $this->getTasksForSelect()
 								));
 							?>
@@ -32,7 +32,7 @@ $this->the_header();
 							<?php $this->createField(array(
 								'type' => 'select',
 								'name' => 'status',
-								'label' => translator::trans("cronjob.task.status"),
+								'label' => t("cronjob.task.status"),
 								'options' => $this->getStatusForSelect()
 							));
 							?>
@@ -43,7 +43,7 @@ $this->the_header();
 							<?php $this->createField(array(
 									'name' => 'process',
 									'ltr' => true,
-									'label' => translator::trans("cronjob.task.process")
+									'label' => t("cronjob.task.process")
 								));
 							?>
 						</div>
@@ -56,14 +56,14 @@ $this->the_header();
 								'data' => [
 									'role' => 'tagsinput'
 								],
-								'label' => translator::trans("cronjob.task.parameters")
+								'label' => t("cronjob.task.parameters")
 							));
 							?>
 						</div>
 					</div>
 					<div class="row cronjob-time">
 						<div class="col-md-6">
-							<p> <?php echo translator::trans("cronjob.minutes"); ?> </p>
+							<p> <?php echo t("cronjob.minutes"); ?> </p>
 							<div class="row">
 								<div class="col-xs-2">
 									<?php $this->createField(array(
@@ -73,7 +73,7 @@ $this->the_header();
 										'options' => array(
 											array(
 												'value' => 'all',
-												'label' => translator::trans("cronjob.all"),
+												'label' => t("cronjob.all"),
 												'data' => array(
 													'type' => 'minutes'
 												)
@@ -104,7 +104,7 @@ $this->the_header();
 							</div>
 						</div>
 						<div class="col-md-6">
-							<p> <?php echo translator::trans("cronjob.hours"); ?> </p>
+							<p> <?php echo t("cronjob.hours"); ?> </p>
 							<div class="row">
 								<div class="col-xs-2">
 									<?php $this->createField(array(
@@ -114,7 +114,7 @@ $this->the_header();
 										'options' => array(
 											array(
 												'value' => 'all',
-												'label' => translator::trans("cronjob.all"),
+												'label' => t("cronjob.all"),
 												'data' => array(
 													'type' => 'hours'
 												)
@@ -146,7 +146,7 @@ $this->the_header();
 					</div>
 					<div class="row cronjob-time">
 						<div class="col-md-6 months">
-							<p> <?php echo translator::trans("cronjob.months"); ?> </p>
+							<p> <?php echo t("cronjob.months"); ?> </p>
 							<div class="row">
 								<div class="col-xs-3 col-sm-2">
 									<?php $this->createField(array(
@@ -156,7 +156,7 @@ $this->the_header();
 										'options' => array(
 											array(
 												'value' => 'all',
-												'label' => translator::trans("cronjob.all"),
+												'label' => t("cronjob.all"),
 												'data' => array(
 													'type' => 'months'
 												)
@@ -186,7 +186,7 @@ $this->the_header();
 							</div>
 						</div>
 						<div class="col-md-6">
-							<p> <?php echo translator::trans("cronjob.days"); ?> </p>
+							<p> <?php echo t("cronjob.days"); ?> </p>
 							<div class="row">
 								<div class="col-xs-2">
 									<?php $this->createField(array(
@@ -196,7 +196,7 @@ $this->the_header();
 										'options' => array(
 											array(
 												'value' => 'all',
-												'label' => translator::trans("cronjob.all"),
+												'label' => t("cronjob.all"),
 												'data' => array(
 													'type' => 'days'
 												)
@@ -228,8 +228,8 @@ $this->the_header();
 						</div>
 					</div>
 					<p class="text-left">
-						<a href="<?php echo userpanel\url('cronjob/tasks'); ?>" class="btn btn-light-grey"><i class="fa fa-chevron-circle-right"></i> <?php echo translator::trans('cronjob.return'); ?></a>
-						<button type="submit" class="btn btn-teal"><i class="fa fa-edit"></i> <?php echo translator::trans("cronjob.edit") ?></button>
+						<a href="<?php echo userpanel\url('settings/cronjob/tasks'); ?>" class="btn btn-light-grey"><i class="fa fa-chevron-circle-right"></i> <?php echo t('cronjob.return'); ?></a>
+						<button type="submit" class="btn btn-teal"><i class="fa fa-edit"></i> <?php echo t("cronjob.edit") ?></button>
 					</p>
 				</form>
 			</div>

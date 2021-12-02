@@ -1,0 +1,42 @@
+{
+	"author": {
+		"name" : "Jeyserver LTD",
+		"website" : "https://www.jeyserver.com/"
+	},
+	"rtl": false,
+	"phrases":{
+		"cronjob": "Crojobs",
+		"cronjob.task.create": "Add new Cronjob",
+		"cronjob.task.edit": "Edit cronjob",
+		"cronjob.tasks": "Tasks",
+		"cronjob.task.id": "ID",
+		"cronjob.task.name": "Name",
+		"cronjob.task.status": "Status",
+		"cronjob.task.status.active": "Active",
+		"cronjob.task.status.deactive": "Deactive",
+		"cronjob.task.process": "Process",
+		"cronjob.task.parameters": "Parameters",
+		"cronjob.search":"Search",
+		"cronjob.search.cancel":"Cancel",
+		"cronjob.search.word-key": "Key word",
+		"cronjob.edit": "Edit",
+		"cronjob.return": "Return",
+		"cronjob.create": "Create",
+		"cronjob.minute": "Minute",
+		"cronjob.all": "All",
+		"cronjob.minutes": "Minutes",
+		"cronjob.hours": "Hours",
+		"cronjob.days": "Days",
+		"cronjob.months": "Months",
+		"cronjob.weekdays": "Week Days",
+		"error.schedule.inputvalidation.months": "No month(s) selected! <br> Use 'All' if you wants to run in every months.",
+		"error.schedule.inputvalidation.days": "No day(s) selected! <br> Use 'All' if you wants to run in every days.",
+		"error.schedule.inputvalidation.hours": "No hour(s) selected! <br> Use 'All' if you wants to run in every hours.",
+		"error.schedule.inputvalidation.minutes": "No minute(s) selected! <br> Use 'All' if you wants to run in every minutes.",
+		"error.cronjob.task.notfound": "No records found.",
+		"titles.cronjob.delete": "Delete",
+		"warnings.cronjob.task.delete": "Are you sure wants to delete task #{id}? Please be careful, Can not revert this action.",
+		"titles.cronjob.tasks.delete": "Delete cronjob task",
+		"titles.cronjob.tasks.edit": "Edit cronjob task"
+	}
+}

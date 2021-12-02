@@ -4,7 +4,6 @@ use \packages\userpanel;
 use \themes\clipone\navigation;
 use \themes\clipone\viewTrait;
 use \themes\clipone\views\formTrait;
-use \packages\base\translator;
 use \packages\base\db\dbObject;
 use \packages\base\view\error;
 use \packages\cronjob\task;
@@ -14,10 +13,7 @@ class edit extends tasks_edit{
 	protected $task;
 	function __beforeLoad(){
 		$this->task = $this->getTask();
-		$this->setTitle(array(
-			translator::trans("cronjob"),
-			translator::trans("cronjob.task.edit")." ".$this->task->name
-		));
+		$this->setTitle(t("titles.cronjob.tasks.edit"));
 		$this->setNavigation();
 		$this->handlingScheduleError();
 		$this->addBodyClass('cronjob-task');
@@ -39,11 +35,11 @@ class edit extends tasks_edit{
 	protected function getStatusForSelect(){
 		return array(
 			array(
-				'title' => translator::trans('cronjob.task.status.active'),
+				'title' => t('cronjob.task.status.active'),
 				'value' => task::active
 			),
 			array(
-				'title' => translator::trans('cronjob.task.status.deactive'),
+				'title' => t('cronjob.task.status.deactive'),
 				'value' => task::deactive
 			)
 		);
@@ -56,7 +52,7 @@ class edit extends tasks_edit{
 			if($task->name == $formname){
 				$found = true;
 			}
-			$title = translator::trans('cronjob.task.name.'.$task->name);
+			$title = t('cronjob.task.name.'.$task->name);
 			$options[] = array(
 				'value' => $task->name,
 				'title' => $title ? $title : $task->name,
