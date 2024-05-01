@@ -1,6 +1,6 @@
 <?php
 
-namespace themes\clipone\views\cronjob\Task;
+namespace themes\clipone\Views\cronjob\Task;
 
 use packages\base\View\Error;
 use packages\cronjob\Task;

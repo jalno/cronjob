@@ -1,23 +1,25 @@
 <?php
 
-namespace themes\clipone\views\cronjob\Task;
+namespace themes\clipone\Views\cronjob\Task;
 
 use packages\base\DB\DBObject;
 use packages\base\View\Error;
 use packages\cronjob\Task;
-use packages\cronjob\Views\Task\Create as TasksCreate;
+use packages\cronjob\Views\Task\Edit as TasksEdit;
 use themes\clipone\Navigation;
 use themes\clipone\Views\FormTrait;
 use themes\clipone\ViewTrait;
 
-class Create extends TasksCreate
+class Edit extends TasksEdit
 {
     use ViewTrait;
     use FormTrait;
+    protected $task;
 
     public function __beforeLoad()
     {
-        $this->setTitle(t('cronjob.task.create'));
+        $this->task = $this->getTask();
+        $this->setTitle(t('titles.cronjob.tasks.edit'));
         $this->setNavigation();
         $this->handlingScheduleError();
         $this->addBodyClass('cronjob-task');
@@ -73,7 +75,7 @@ class Create extends TasksCreate
                 ],
             ];
         }
-        if (!$found and $formname) {
+        if (!$found) {
             array_unshift($options, [
                 'value' => $formname,
                 'title' => $formname,
