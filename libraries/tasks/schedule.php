@@ -1,25 +1,30 @@
 <?php
-namespace packages\cronjob\task;
-use \packages\base\db\dbObject;
-class schedule extends dbObject{
-	const saturday = 1;
-	const sunday = 2;
-	const monday = 3;
-	const tuesday = 4;
-	const wednesday = 5;
-	const thursday = 6;
-	const friday = 7;
-	protected $dbTable = "cronjob_schedules";
-	protected $primaryKey = "id";
-	protected $dbFields = array(
-		'task' => array('type' => 'int', 'required' => true),
-		'year' => array('type' => 'int'),
-		'month' => array('type' => 'int'),
-		'day' => array('type' => 'int'),
-		'hour' => array('type' => 'int'),
-		'minute' => array('type' => 'int')
-    );
-	protected $relations = array(
-		'task' => array('hasOne', 'packages\\cronjob\\task', 'task')
-	);
+
+namespace packages\cronjob\Task;
+
+use packages\base\DB\DBObject;
+use packages\cronjob\Task;
+
+class Schedule extends DBObject
+{
+    public const saturday = 1;
+    public const sunday = 2;
+    public const monday = 3;
+    public const tuesday = 4;
+    public const wednesday = 5;
+    public const thursday = 6;
+    public const friday = 7;
+    protected $dbTable = 'cronjob_schedules';
+    protected $primaryKey = 'id';
+    protected $dbFields = [
+        'task' => ['type' => 'int', 'required' => true],
+        'year' => ['type' => 'int'],
+        'month' => ['type' => 'int'],
+        'day' => ['type' => 'int'],
+        'hour' => ['type' => 'int'],
+        'minute' => ['type' => 'int'],
+    ];
+    protected $relations = [
+        'task' => ['hasOne', Task::class, 'task'],
+    ];
 }

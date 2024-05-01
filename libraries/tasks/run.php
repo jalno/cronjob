@@ -1,15 +1,21 @@
 <?php
-namespace packages\cronjob\task;
-use \packages\base\db\dbObject;
-class run extends dbObject{
-	protected $dbTable = "cronjob_runs";
-	protected $primaryKey = "id";
-	protected $dbFields = array(
-		'task' => array('type' => 'int', 'required' => true),
-		'process' => array('type' => 'int', 'required' => true)
-    );
-	protected $relations = array(
-		'task' => array('hasOne', 'packages\\cronjob\\task', 'task'),
-		'process' => array('hasOne', 'packages\\base\\process', 'process')
-	);
+
+namespace packages\cronjob\Task;
+
+use packages\base\DB\DBObject;
+use packages\base\Process;
+use packages\cronjob\Task;
+
+class Run extends DBObject
+{
+    protected $dbTable = 'cronjob_runs';
+    protected $primaryKey = 'id';
+    protected $dbFields = [
+        'task' => ['type' => 'int', 'required' => true],
+        'process' => ['type' => 'int', 'required' => true],
+    ];
+    protected $relations = [
+        'task' => ['hasOne', Task::class, 'task'],
+        'process' => ['hasOne', Process::class, 'process'],
+    ];
 }

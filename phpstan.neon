@@ -1,0 +1,7 @@
+parameters:
+  level: 0
+  scanDirectories:
+    - ../..
+  ignoreErrors:
+    - "/Unsafe usage of new static/"
+    - "/Undefined variable: \\$prefix/"

@@ -1,11 +1,18 @@
 <?php
-namespace packages\cronjob\views\task;
-use \packages\cronjob\views\form;
-class create extends form{
-    public function setTasks($tasks){
-        $this->setData($tasks, "tasks");
+
+namespace packages\cronjob\Views\Task;
+
+use packages\cronjob\Views\Form;
+
+class Create extends Form
+{
+    public function setTasks($tasks)
+    {
+        $this->setData($tasks, 'tasks');
     }
-    protected function getTasks(){
-        return $this->getData("tasks");
+
+    protected function getTasks()
+    {
+        return $this->getData('tasks');
     }
 }

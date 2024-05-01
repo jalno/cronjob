@@ -1,14 +1,18 @@
 <?php
-namespace packages\cronjob\listeners;
-use \packages\cronjob\views;
-use \packages\notice\events\views as event;
-use \packages\notice\events\views\view;
 
-class notice{
-	public function views(event $event){
-		$event->addView(new view(views\task\listview::class));
-		$event->addView(new view(views\task\create::class));
-		$event->addView(new view(views\task\edit::class));
-		$event->addView(new view(views\task\delete::class));
-	}
+namespace packages\cronjob\Listeners;
+
+use packages\cronjob\Views;
+use packages\notice\Events\Views as Event;
+use packages\notice\Events\Views\View;
+
+class Notice
+{
+    public function views(Event $event)
+    {
+        $event->addView(new View(Views\Task\ListView::class));
+        $event->addView(new View(Views\Task\Create::class));
+        $event->addView(new View(Views\Task\Edit::class));
+        $event->addView(new View(Views\Task\Delete::class));
+    }
 }
