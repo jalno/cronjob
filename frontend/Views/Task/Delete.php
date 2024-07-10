@@ -1,6 +1,6 @@
 <?php
 
-namespace themes\clipone\Views\cronjob\Task;
+namespace themes\clipone\Views\CronJob\Task;
 
 use packages\cronjob\Views\Task\Delete as TasksDelete;
 use themes\clipone\Navigation;

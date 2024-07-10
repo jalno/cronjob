@@ -76,7 +76,7 @@ class Task extends DBObject
         }
         $tasks = [];
         foreach ($datas as $data) {
-            $tasks[] = new static($data);
+            $tasks[] = new self($data);
         }
 
         return $tasks;
