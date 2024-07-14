@@ -1,18 +1,18 @@
 [
 	{
-		"path": ["userpanel", "settings", "cronjob", "tasks"],
-		"controller": "controllers\\tasks@listview"
+		"path": "userpanel/settings/cronjob/tasks",
+		"controller": "packages/cronjob/Controllers/Tasks@listview"
 	},
 	{
 		"path": ["userpanel","settings", "cronjob", "tasks", "delete", {"type":"dynamic", "name":"task", "regex":"/^\\d+$/"}],
-		"controller": "controllers\\tasks@delete"
+		"controller": "packages/cronjob/Controllers/Tasks@delete"
 	},
 	{
 		"path": ["userpanel", "settings", "cronjob", "tasks", "edit", {"type":"dynamic", "name":"task", "regex":"/^\\d+$/"}],
-		"controller": "controllers\\tasks@edit"
+		"controller": "packages/cronjob/Controllers/Tasks@edit"
 	},
 	{
-		"path": ["userpanel","settings","cronjob", "tasks", "create"],
-		"controller": "controllers\\tasks@create"
+		"path": "userpanel/settings/cronjob/tasks/create",
+		"controller": "packages/cronjob/Controllers/Tasks@create"
 	}
 ]

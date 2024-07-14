@@ -6,12 +6,21 @@
     "prefer-stable": true,
     "require": {
         "jalno/base": "@dev",
-        "jalno/userpanel" : "@dev"
+        "jalno/userpanel": "@dev"
     },
     "autoload": {
         "psr-4": {
-            "packages\\cronjob\\": ["libraries/"],
-            "themes\\clipone\\Views\\CronJob\\" : ["frontend/Views/"]
+            "packages\\cronjob\\": [
+                "libraries/"
+            ],
+            "themes\\clipone\\Views\\CronJob\\": [
+                "frontend/Views/"
+            ]
+        }
+    },
+    "extra": {
+        "jalno": {
+            "manifest": "package.json"
         }
     }
 }

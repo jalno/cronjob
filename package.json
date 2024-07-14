@@ -1,7 +1,6 @@
 {
 	"permissions": "*",
 	"frontend": "frontend",
-	"dependencies": ["base", "userpanel"],
 	"routing": "routing.json",
 	"autoload": "autoloader.json",
 	"languages":{
@@ -10,12 +9,12 @@
 	},
 	"events": [
 		{
-			"name":"\\packages\\userpanel\\events\\usertype_permissions_list",
-			"listener": "listeners\\settings\\usertype@permissions_list"
+			"name":"packages/userpanel/Events/UserTypePermissionsList",
+			"listener": "package/cronjob/UserType@permissions_list"
 		},
 		{
-			"name":"\\packages\\notice\\events\\views",
-			"listener": "listeners\\notice@views"
+			"name":"packages/notice/Events/Views",
+			"listener": "package/cronjob/Listeners/Notice@views"
 		}
 	]
 }
