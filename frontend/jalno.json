@@ -6,7 +6,6 @@
 		"name" : "Jeyserver LTD",
 		"website" : "https://www.jeyserver.com/"
 	},
-	"autoload":"autoloader.json",
 	"languages":{
 		"fa_IR" : "langs/fa_IR.json",
 		"en_US" : "langs/en_US.json"

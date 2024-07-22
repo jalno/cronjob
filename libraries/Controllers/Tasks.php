@@ -5,7 +5,7 @@ namespace packages\cronjob\Controllers;
 use packages\base\DB;
 use packages\base\DB\DuplicateRecord;
 use packages\base\DB\Parenthesis;
-use packages\base\HTTP;
+use packages\base\Http;
 use packages\base\InputValidation;
 use packages\base\NotFound;
 use packages\base\Process;
