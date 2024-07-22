@@ -15,10 +15,7 @@ use packages\cronjob\Events\Tasks as TasksEvents;
 use packages\cronjob\Task;
 use packages\cronjob\Task\Schedule;
 use packages\cronjob\View;
-use packages\cronjob\Views\Task\Create;
-use packages\cronjob\Views\Task\Delete;
-use packages\cronjob\Views\Task\Edit;
-use packages\cronjob\Views\Task\ListView;
+use themes\clipone\Views\CronJob as Views;
 use packages\userpanel;
 use packages\userpanel\Controller;
 
@@ -29,7 +26,7 @@ class Tasks extends Controller
     public function listview()
     {
         Authorization::haveOrFail('task_list');
-        $view = View::byName(ListView::class);
+        $view = View::byName(Views\Task\ListView::class);
         $inputsRules = [
             'id' => [
                 'type' => 'number',
@@ -108,7 +105,7 @@ class Tasks extends Controller
         if (!$task) {
             throw new NotFound();
         }
-        $view = View::byName(Delete::class);
+        $view = View::byName(Views\Task\Delete::class);
         $view->setTask($task);
         if (HTTP::is_post()) {
             try {
@@ -231,7 +228,7 @@ class Tasks extends Controller
         if (!$task) {
             throw new NotFound();
         }
-        $view = View::byName(Edit::class);
+        $view = View::byName(Views\Task\Edit::class);
         $view->setTask($task);
         $tasksEvent = new TasksEvents();
         $tasksEvents = $tasksEvent->get();
@@ -385,7 +382,7 @@ class Tasks extends Controller
     {
         Authorization::haveOrFail('task_create');
         $this->response->setStatus(false);
-        $view = View::byName(Create::class);
+        $view = View::byName(Views\Task\Create::class);
         $tasksEvent = new TasksEvents();
         $tasksEvents = $tasksEvent->get();
         $view->setTasks($tasksEvents);
