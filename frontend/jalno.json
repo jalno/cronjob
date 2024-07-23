@@ -23,27 +23,5 @@
 		{"type":"less", "file":"assets/less/tags.less"},
 		{"type":"less", "file":"assets/less/schedules.less"},
 		{"type":"ts", "file":"assets/ts/Main.ts"}
-	],
-	"views":[
-		{
-			"name":"\\themes\\clipone\\views\\cronjob\\task\\listview",
-			"parent":"\\packages\\cronjob\\views\\task\\listview",
-			"file":"html/task/listview.php"
-		},
-		{
-			"name":"\\themes\\clipone\\views\\cronjob\\task\\delete",
-			"parent":"\\packages\\cronjob\\views\\task\\delete",
-			"file":"html/task/delete.php"
-		},
-		{
-			"name":"\\themes\\clipone\\views\\cronjob\\task\\edit",
-			"parent":"\\packages\\cronjob\\views\\task\\edit",
-			"file":"html/task/edit.php"
-		},
-		{
-			"name":"\\themes\\clipone\\views\\cronjob\\task\\create",
-			"parent":"\\packages\\cronjob\\views\\task\\create",
-			"file":"html/task/create.php"
-		}
 	]
 }
