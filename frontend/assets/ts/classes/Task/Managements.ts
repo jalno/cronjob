@@ -1,4 +1,3 @@
-import * as $ from "jquery";
 import "jquery.growl";
 import "select2";
 import "../jquery.userAutoComplete";
