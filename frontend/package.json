@@ -1,12 +1,13 @@
 {
-  "dependencies": {
-    "jquery": "^3.4.1",
-    "webuilder": "^2.0.1",
-    "jquery.growl": "^1.3.1",
-    "bootstrap": "^3.3.7",
-    "bootstrap-inputmsg": "^1.0.0",
-    "select2": "^4.0.3",
-    "bootstrap-tagsinput": "^0.7.1",
-    "@jalno/translator": "latest"
-  }
+        "name": "jalno-cronjob-frontend",
+	"dependencies": {
+		"jquery": "^3.4.1",
+		"webuilder": "^2.0.1",
+		"jquery.growl": "^1.3.1",
+		"bootstrap": "^3.3.7",
+		"bootstrap-inputmsg": "^1.0.0",
+		"select2": "^4.0.3",
+		"bootstrap-tagsinput": "^0.7.1",
+		"@jalno/translator": "latest"
+	}
 }
